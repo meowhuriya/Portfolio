@@ -1,0 +1,8 @@
+{
+  "name": "sayeeda-portfolio",
+  "version": "1.0.0",
+  "description": "Google Profile Portfolio for Sayeeda Huriya Fatima",
+  "scripts": {
+    "start": "python3 -m http.server 3000"
+  }
+}

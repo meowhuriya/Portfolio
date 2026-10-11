@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sayeeda Huriya Fatima | Portfolio & Projects</title>
+  <meta name="description" content="Personal Portfolio of Sayeeda Huriya Fatima - B.Tech Computer Science Engineering student at Shadan Women's College Of Engineering And Technology (2026-2030). Explore live deployed projects and future technology concepts." />
+  <meta name="author" content="Sayeeda Huriya Fatima" />
+  
+  <!-- Modern Clean Typography: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Clean Modern Header -->
+  <header class="app-header" id="top-nav">
+    <div class="header-container">
+      <div class="header-left">
+        <a href="#top-nav" class="brand-logo" aria-label="Sayeeda Huriya Fatima Home">
+          <span class="brand-monogram" id="header-monogram">HF</span>
+          <div class="brand-name-group">
+            <span class="brand-title" id="header-brand-name">Sayeeda Huriya Fatima</span>
+            <span class="brand-subtitle" id="header-brand-subtitle">B.Tech Computer Science • 2026–2030</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Search Bar -->
+      <div class="header-center">
+        <div class="search-bar" role="search">
+          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="global-search-input" placeholder="Search projects, skills, or future ideas..." aria-label="Search projects" />
+          <button id="clear-search-btn" class="clear-search-btn" title="Clear search" aria-label="Clear search" style="display: none;">✕</button>
+        </div>
+      </div>
+
+      <!-- Header Right: Quick Navigation & Edit Mode Toggle -->
+      <div class="header-right">
+        <nav class="quick-nav-links">
+          <a href="#deployed-gallery" class="nav-link" onclick="switchTab('deployed-gallery')">Live Projects</a>
+          <a href="#future-gallery" class="nav-link" onclick="switchTab('future-gallery')">Future Lab</a>
+          <a href="#about-tab" class="nav-link" onclick="switchTab('about-tab')">Systems Matrix</a>
+          <a href="#contact-tab" class="nav-link" onclick="switchTab('contact-tab')">Contact</a>
+        </nav>
+
+        <!-- Edit Mode Switch Pill -->
+        <button class="edit-mode-pill" id="toggle-edit-mode-btn" title="Toggle interactive edit controls for updating profile, bio, skills, and projects">
+          <span class="edit-mode-dot"></span>
+          <span class="edit-mode-text">Edit Mode: OFF</span>
+        </button>
+
+        <a href="mailto:sa.huriyafatima@gmail.com" class="btn btn-primary btn-sm header-cta-btn" id="header-email-link">
+          <span>Get in Touch</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="main-content">
+    
+    <!-- Hero Profile Section -->
+    <section class="profile-hero-card">
+      <div class="hero-accent-strip"></div>
+
+      <div class="hero-body">
+        <div class="hero-left">
+          <div class="avatar-container">
+            <div class="avatar-large" id="profile-avatar-display">
+              <span id="profile-avatar-monogram">HF</span>
+            </div>
+            <div class="online-badge" title="Active & Open to Collaborations"></div>
+          </div>
+          
+          <div class="hero-details">
+            <div class="name-badge-row">
+              <h1 class="profile-name" id="display-profile-name">Sayeeda Huriya Fatima</h1>
+              <span class="status-pill" id="display-status-pill">
+                <span class="status-indicator-dot"></span>
+                <span id="display-status-text">B.Tech CSE Student (2026–2030)</span>
+              </span>
+              <button class="btn-edit-section edit-mode-only" onclick="openProfileModal()" title="Edit Name & Headline" style="display: none;">
+                ✏️ Edit Profile
+              </button>
+            </div>
+
+            <p class="profile-headline" id="display-profile-headline">
+              Aspiring Software Engineer & Full-Stack Developer with live web deployments and an active focus on AI workflows, modern web architectures, and intelligent systems.
+            </p>
+
+            <div class="college-info-box">
+              <div class="college-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <div class="college-text">
+                <span class="college-name" id="display-college-name">Shadan Women's College Of Engineering And Technology</span>
+                <span class="college-batch"><strong class="highlight-text" id="display-college-batch">Batch 2026 – 2030</strong> • Department of Computer Science & Engineering</span>
+              </div>
+            </div>
+
+            <!-- Meta Badges -->
+            <div class="meta-tags-row" id="display-meta-tags">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Hero Action Buttons -->
+        <div class="hero-actions">
+          <a href="mailto:sa.huriyafatima@gmail.com" class="btn btn-primary" id="hero-gmail-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>Email Me</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/sayeeda-huriya-fatima" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="hero-linkedin-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+            <span>LinkedIn Profile</span>
+          </a>
+
+          <button class="btn btn-subtle" id="copy-email-quick-btn" title="Click to copy email address">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span id="display-copy-email-text">sa.huriyafatima@gmail.com</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="profile-stats-strip">
+        <div class="stat-item">
+          <span class="stat-number" id="deployed-count-stat">2</span>
+          <span class="stat-label">Live Deployed Websites</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" id="future-count-stat">3</span>
+          <span class="stat-label">Future Innovations & Ideas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" id="stat-academic-span">2026–2030</span>
+          <span class="stat-label">B.Tech Academic Span</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number status-open">Available</span>
+          <span class="stat-label">Projects & Internships</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs Bar -->
+    <nav class="portfolio-tabs-bar" aria-label="Portfolio sections">
+      <button class="tab-button active" data-tab="deployed-gallery">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        <span>Live Deployed Websites</span>
+        <span class="tab-badge" id="deployed-badge-pill">2</span>
+      </button>
+
+      <button class="tab-button" data-tab="future-gallery">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18h6"></path>
+          <path d="M10 22h4"></path>
+          <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"></path>
+        </svg>
+        <span>Future Ideas & R&D Gallery</span>
+        <span class="tab-badge" id="future-badge-pill">3</span>
+      </button>
+
+      <button class="tab-button" data-tab="about-tab">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+        <span>Systems Research & Academic Matrix</span>
+      </button>
+
+      <button class="tab-button" data-tab="contact-tab">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>Contact & Connect</span>
+      </button>
+    </nav>
+
+    <!-- Active Edit Mode Notification Banner with Data Management -->
+    <div class="edit-mode-banner" id="edit-mode-notice" style="display: none;">
+      <div class="banner-content">
+        <span class="banner-icon">✏️</span>
+        <div>
+          <strong>Portfolio Edit Mode Active:</strong> Everything is editable! You can update your Bio, Name, Education, Skills, Contact, and project galleries. Changes save immediately to your browser.
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button class="btn btn-sm btn-outline" onclick="openProfileModal()">✏️ Edit Profile & Bio</button>
+        <button class="btn btn-sm btn-outline" onclick="exportPortfolioJson()" title="Download a JSON backup of your portfolio">💾 Backup JSON</button>
+        <button class="btn btn-sm btn-outline" onclick="triggerImportJson()" title="Import a previously saved JSON backup">📂 Restore JSON</button>
+        <input type="file" id="import-json-input" accept=".json" style="display: none;" onchange="handleImportJson(event)" />
+        <button class="btn-link" id="exit-edit-mode-btn">Done Editing</button>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         TAB 1: LIVE DEPLOYED WEBSITES GALLERY
+         ==================================================================== -->
+    <section class="tab-content active" id="deployed-gallery">
+      <div class="gallery-header-row">
+        <div class="gallery-title-box">
+          <div class="title-with-pill">
+            <h2 class="section-title">Live Deployed Websites</h2>
+            <span class="gallery-counter-pill">Gallery View</span>
+          </div>
+          <p class="section-subtitle">Real-world production web applications built, verified, and deployed on cloud platforms.</p>
+        </div>
+
+        <div class="gallery-actions-toolbar">
+          <!-- Tag filter pills -->
+          <div class="tag-filters-container" id="deployed-tag-filters">
+            <button class="tag-pill active" data-filter="all">All</button>
+            <button class="tag-pill" data-filter="AI">AI / ML</button>
+            <button class="tag-pill" data-filter="Aerospace">Aerospace</button>
+            <button class="tag-pill" data-filter="Vercel">Vercel</button>
+            <button class="tag-pill" data-filter="React">React / Web</button>
+          </div>
+
+          <div class="gallery-view-controls">
+            <!-- Add New Project Button -->
+            <button class="btn btn-primary" id="add-deployed-project-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>Add Live Project</span>
+            </button>
+
+            <!-- Reset to Defaults Button -->
+            <button class="btn-icon-subtle" id="reset-deployed-btn" title="Restore default deployed projects (Node Binding AI & PulseAero)">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <polyline points="23 20 23 14 17 14"></polyline>
+                <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Grid Gallery -->
+      <div class="projects-gallery-grid" id="deployed-projects-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 2: FUTURE IDEAS & R&D CONCEPTS GALLERY
+         ==================================================================== -->
+    <section class="tab-content" id="future-gallery">
+      <div class="gallery-header-row">
+        <div class="gallery-title-box">
+          <div class="title-with-pill">
+            <h2 class="section-title">Future Ideas & Innovations Gallery</h2>
+            <span class="future-lab-badge">R&D Lab</span>
+          </div>
+          <p class="section-subtitle">Upcoming technical architecture blueprints and exploratory ideas planned for the 2026–2030 timeline.</p>
+        </div>
+
+        <div class="gallery-actions-toolbar">
+          <button class="btn btn-primary" id="add-future-idea-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>Propose Future Idea</span>
+          </button>
+          
+          <button class="btn-icon-subtle" id="reset-future-btn" title="Restore default future ideas">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <polyline points="23 20 23 14 17 14"></polyline>
+              <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Future Ideas Grid -->
+      <div class="future-gallery-grid" id="future-ideas-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 3: SYSTEMS RESEARCH & ACADEMIC MATRIX
+         ==================================================================== -->
+    <section class="tab-content" id="about-tab">
+      <div class="about-grid">
+        
+        <!-- Left Card: Curriculum & Research Matrix -->
+        <div class="content-card">
+          <div class="card-header-with-icon">
+            <div class="card-header-main">
+              <div class="icon-circle icon-moss">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="card-heading">Curriculum & Research Matrix</h3>
+                <p class="card-subheading">Core curriculum & specialized research vectors</p>
+              </div>
+            </div>
+            <button class="btn-edit-section" onclick="openCurriculumModal()">
+              ✏️ Edit Matrix
+            </button>
+          </div>
+
+          <!-- Active Tracker Badges -->
+          <div class="trackers-row" id="display-trackers-row">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Academic Institution Foundation Block -->
+          <div class="matrix-inst-box">
+            <div class="matrix-inst-degree" id="display-matrix-degree">B.Tech Computer Science and Engineering</div>
+            <div class="matrix-inst-org" id="display-matrix-org">Shadan Women's College Of Engineering And Technology • Batch 2026 – 2030</div>
+          </div>
+
+          <!-- Foundation Engineering Track -->
+          <div class="matrix-section-title">
+            <span class="section-icon">📐</span>
+            <span>Foundation Engineering</span>
+          </div>
+          <div class="foundation-pills-row" id="display-foundation-tracks">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Independent Research Syllabus -->
+          <div class="matrix-section-title">
+            <span class="section-icon">🔬</span>
+            <span>Independent Research Syllabus</span>
+          </div>
+          <div class="research-syllabus-list" id="display-research-syllabus">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Right Card: Technical Arsenal by Layer (Categorized by Systems Architecture) -->
+        <div class="content-card">
+          <div class="card-header-with-icon">
+            <div class="card-header-main">
+              <div class="icon-circle icon-cream">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="card-heading">Technical Arsenal by Layer</h3>
+                <p class="card-subheading">Layered systems architecture & compute depth</p>
+              </div>
+            </div>
+            <button class="btn-edit-section" onclick="openArsenalModal()">
+              ✏️ Edit Layers
+            </button>
+          </div>
+
+          <!-- Layered Arsenal Container -->
+          <div class="arsenal-layers-container" id="display-arsenal-layers">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Sub-Module Card: Live Research Log / Knowledge Log -->
+        <div class="investigations-log-card">
+          <div class="investigations-terminal-bar">
+            <div class="terminal-dots-wrap">
+              <span class="terminal-dot-pill d-red"></span>
+              <span class="terminal-dot-pill d-yellow"></span>
+              <span class="terminal-dot-pill d-blue"></span>
+            </div>
+            <span class="terminal-title-text">investigations.log — active technical vectors</span>
+            <span style="font-size: 0.75rem; color: #76C0EC; font-family: monospace;">status: active tracking</span>
+          </div>
+
+          <div class="investigations-card-body">
+            <div class="investigations-header-row">
+              <div class="investigations-header-text">
+                <h3>Current Investigations & Reading</h3>
+                <p>Live technical milestone tracking, active literature reviews, and prototype benchmarks.</p>
+              </div>
+              <button class="btn-edit-section" onclick="openInvestigationsModal()">
+                ✏️ Edit Research Log
+              </button>
+            </div>
+
+            <div class="investigations-table-wrapper">
+              <table class="investigations-table">
+                <thead>
+                  <tr>
+                    <th>Focus Vector</th>
+                    <th>Topic / Paper / Spec</th>
+                    <th>Milestone State</th>
+                  </tr>
+                </thead>
+                <tbody id="display-investigations-tbody">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio & Engineering Vision Card (Clean & Focused) -->
+        <div class="content-card full-width">
+          <div class="card-header-with-icon">
+            <div class="card-header-main">
+              <div class="icon-circle icon-blush">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div>
+                <h3 class="card-heading" id="display-bio-heading">About Sayeeda Huriya Fatima</h3>
+                <p class="card-subheading">Personal Bio & Architectural Philosophy</p>
+              </div>
+            </div>
+            <button class="btn-edit-section" onclick="openProfileModal()">
+              ✏️ Edit Perspective
+            </button>
+          </div>
+          
+          <div class="bio-text" id="display-bio-paragraphs">
+            <!-- Dynamically rendered bio paragraphs -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 4: CONTACT & CONNECT
+         ==================================================================== -->
+    <section class="tab-content" id="contact-tab">
+      <div class="contact-card-container" id="contact-section">
+        <div class="content-card contact-main-card">
+          <div class="contact-header">
+            <div class="contact-avatar-cluster">
+              <div class="contact-avatar-group">
+                <div class="avatar-medium" id="contact-avatar-monogram">HF</div>
+                <div class="contact-header-text">
+                  <h3 id="display-contact-heading">Connect with Sayeeda Huriya Fatima</h3>
+                  <p>Open for project inquiries, technical collaborations, and student internship discussions.</p>
+                </div>
+              </div>
+              <button class="btn-edit-section" onclick="openContactModal()">
+                ✏️ Edit Contact Info
+              </button>
+            </div>
+          </div>
+
+          <div class="contact-options-grid">
+            <!-- Gmail Card -->
+            <div class="contact-channel-card">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="channel-info">
+                <div class="channel-title">Direct Email</div>
+                <a href="mailto:sa.huriyafatima@gmail.com" class="channel-link" id="display-contact-email-link">sa.huriyafatima@gmail.com</a>
+                <p class="channel-caption">Click to compose an email directly in your email client or copy to clipboard.</p>
+              </div>
+              <div class="channel-buttons">
+                <a href="mailto:sa.huriyafatima@gmail.com?subject=Hello%20Sayeeda%20-%20Portfolio%20Inquiry" class="btn btn-primary" id="contact-compose-btn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  <span>Compose Mail</span>
+                </a>
+                <button class="btn btn-outline" id="copy-email-btn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Copy Email</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- LinkedIn Card -->
+            <div class="contact-channel-card">
+              <div class="channel-icon">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </div>
+              <div class="channel-info">
+                <div class="channel-title">LinkedIn Profile</div>
+                <a href="https://www.linkedin.com/in/sayeeda-huriya-fatima" target="_blank" rel="noopener noreferrer" class="channel-link" id="display-contact-linkedin-link">linkedin.com/in/sayeeda-huriya-fatima</a>
+                <p class="channel-caption" id="display-contact-linkedin-caption">Username: <strong>@sayeeda-huriya-fatima</strong> • Connect for networking & updates.</p>
+              </div>
+              <div class="channel-buttons">
+                <a href="https://www.linkedin.com/in/sayeeda-huriya-fatima" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="contact-open-linkedin-btn">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Open LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Message Form -->
+          <div class="quick-message-box">
+            <h4>Send a Direct Note</h4>
+            <p>Leave a message to discuss projects, ideas, or opportunities.</p>
+            <form id="quick-message-form" class="message-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="sender-name">Your Name</label>
+                  <input type="text" id="sender-name" placeholder="E.g. Dr. Ayesha Khan" required />
+                </div>
+                <div class="form-group">
+                  <label for="sender-email">Your Email</label>
+                  <input type="email" id="sender-email" placeholder="name@domain.com" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="sender-subject">Subject</label>
+                <input type="text" id="sender-subject" placeholder="Project Discussion / Collaboration" required />
+              </div>
+              <div class="form-group">
+                <label for="sender-body">Message</label>
+                <textarea id="sender-body" rows="4" placeholder="Hi Sayeeda, I checked out your deployed websites..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Professional Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-brand" id="footer-name">Sayeeda Huriya Fatima</span>
+        <span class="footer-separator">•</span>
+        <span id="footer-degree">B.Tech Computer Science (2026–2030)</span>
+        <span class="footer-separator">•</span>
+        <span id="footer-college">Shadan Women's College Of Engineering And Technology</span>
+      </div>
+      <div class="footer-right">
+        <button class="btn-link" onclick="openProfileModal()" style="font-size: 0.85rem;">✏️ Edit Everything</button>
+        <button class="btn-link" onclick="resetAllDefaults()" style="font-size: 0.85rem; color: #a34857;">↺ Reset to Default</button>
+        <a href="#top-nav" class="footer-link">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       MODAL 1: EDIT PROFILE & BIO (Full Control)
+       ==================================================================== -->
+  <div class="modal-backdrop" id="profile-modal" aria-hidden="true" role="dialog" aria-labelledby="profile-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge blush">👤</div>
+          <div>
+            <h3 id="profile-modal-title">Edit Profile & Bio</h3>
+            <p class="modal-subtitle">Update your personal details, college info, and about section</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="close-profile-modal-btn" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="profile-form" class="modal-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="input-profile-name">Full Name *</label>
+            <input type="text" id="input-profile-name" required />
+          </div>
+          <div class="form-group">
+            <label for="input-profile-monogram">Avatar Monogram (e.g. HF)</label>
+            <input type="text" id="input-profile-monogram" maxlength="3" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="input-avatar-url">Custom Photo / Avatar URL (optional)</label>
+          <input type="url" id="input-avatar-url" placeholder="https://... (leave empty for monogram)" />
+        </div>
+
+        <div class="form-group">
+          <label for="input-profile-role">Status Badge / Pill Text *</label>
+          <input type="text" id="input-profile-role" placeholder="B.Tech CSE Student (2026–2030)" required />
+        </div>
+
+        <div class="form-group">
+          <label for="input-profile-headline">Hero Headline / Tagline *</label>
+          <textarea id="input-profile-headline" rows="2" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="input-college-name">College / Institution *</label>
+            <input type="text" id="input-college-name" required />
+          </div>
+          <div class="form-group">
+            <label for="input-college-batch">Batch Period *</label>
+            <input type="text" id="input-college-batch" placeholder="2026 – 2030" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="input-meta-tags">Hero Badges (comma-separated)</label>
+          <input type="text" id="input-meta-tags" placeholder="Full-Stack Developer, AI & Node Systems, Vercel Deployments, Hyderabad, Telangana" required />
+        </div>
+
+        <div class="form-group">
+          <label for="input-bio-text">Bio / About Me (Use double line breaks for paragraphs) *</label>
+          <textarea id="input-bio-text" rows="5" required></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancel-profile-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Profile & Bio</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 2: EDIT CURRICULUM & RESEARCH MATRIX
+       ==================================================================== -->
+  <div class="modal-backdrop" id="curriculum-modal" aria-hidden="true" role="dialog" aria-labelledby="curriculum-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">📐</div>
+          <div>
+            <h3 id="curriculum-modal-title">Edit Curriculum & Research Matrix</h3>
+            <p class="modal-subtitle">Update status trackers, foundational coursework, and independent research tracks</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="close-curriculum-modal-btn" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="curriculum-form" class="modal-body">
+        <div class="form-group">
+          <label for="input-matrix-degree">Degree & Branch *</label>
+          <input type="text" id="input-matrix-degree" required />
+        </div>
+
+        <div class="form-group">
+          <label for="input-matrix-org">Institution & Batch Line *</label>
+          <input type="text" id="input-matrix-org" required />
+        </div>
+
+        <div class="form-group">
+          <label for="input-matrix-trackers">Active Status Badges (comma-separated) *</label>
+          <input type="text" id="input-matrix-trackers" placeholder="In Progress • Semester 1, Research Trainee Track, First-Principles Study" required />
+        </div>
+
+        <div class="form-group">
+          <label for="input-matrix-foundation">Foundation Engineering Pillars (comma-separated) *</label>
+          <textarea id="input-matrix-foundation" rows="2" placeholder="Discrete Mathematics, Linear Algebra & Matrix Decompositions, Low-Level C Systems Architecture" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="input-matrix-res1-title">Research Track 1 Title *</label>
+            <input type="text" id="input-matrix-res1-title" placeholder="Computational Biology" required />
+          </div>
+          <div class="form-group">
+            <label for="input-matrix-res2-title">Research Track 2 Title *</label>
+            <input type="text" id="input-matrix-res2-title" placeholder="Neural Dynamics" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="input-matrix-res1-focus">Research Track 1 Focus Syllabus *</label>
+          <textarea id="input-matrix-res1-focus" rows="2" placeholder="Cellular state modeling, biological network graphs, telemetry integration." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="input-matrix-res2-focus">Research Track 2 Focus Syllabus *</label>
+          <textarea id="input-matrix-res2-focus" rows="2" placeholder="Bio-signal extraction, acoustic event parsing, edge inference constraints." required></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancel-curriculum-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Academic Matrix</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 3: EDIT TECHNICAL ARSENAL BY LAYER
+       ==================================================================== -->
+  <div class="modal-backdrop" id="arsenal-modal" aria-hidden="true" role="dialog" aria-labelledby="arsenal-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">⚡</div>
+          <div>
+            <h3 id="arsenal-modal-title">Edit Technical Arsenal by Layer</h3>
+            <p class="modal-subtitle">Configure systems layers, local-first protocols, and compute pipelines</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="close-arsenal-modal-btn" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="arsenal-form" class="modal-body">
+        <div class="form-group">
+          <label for="input-arsenal-systems">Layer 1: Systems & Core Languages (comma-separated) *</label>
+          <textarea id="input-arsenal-systems" rows="2" placeholder="C, Python (NumPy, scientific workflows), SQL (PostgreSQL relational modeling)" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="input-arsenal-pipelines">Layer 2: Data Pipelines & Telemetry (comma-separated) *</label>
+          <textarea id="input-arsenal-pipelines" rows="2" placeholder="Supabase, SQLite (Local-First Edge Caching), Delta Sync Protocols, REST APIs" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="input-arsenal-compute">Layer 3: Frontier & Applied Compute (comma-separated) *</label>
+          <textarea id="input-arsenal-compute" rows="2" placeholder="Computer Vision OCR Parsing, Acoustic Triage Processing, Offline-First Distributed Logic" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="input-arsenal-tooling">Layer 4: Tooling & Environments (comma-separated) *</label>
+          <textarea id="input-arsenal-tooling" rows="2" placeholder="Git/GitHub Actions, Vercel Edge Networks, Linux/UNIX environments" required></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancel-arsenal-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Technical Arsenal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 3B: EDIT CURRENT INVESTIGATIONS & READING LOG
+       ==================================================================== -->
+  <div class="modal-backdrop" id="investigations-modal" aria-hidden="true" role="dialog" aria-labelledby="investigations-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">📋</div>
+          <div>
+            <h3 id="investigations-modal-title">Edit Current Investigations Log</h3>
+            <p class="modal-subtitle">Update live research vectors, papers under review, and milestone states</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="close-investigations-modal-btn" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="investigations-form" class="modal-body">
+        <div style="font-weight: 700; color: var(--navy); margin-bottom: 6px; font-size: 0.9rem;">Vector 1 (e.g. Computational Bio)</div>
+        <div class="form-row">
+          <div class="form-group" style="flex: 1;">
+            <label for="input-inv1-vector">Vector Name *</label>
+            <input type="text" id="input-inv1-vector" placeholder="Computational Bio" required />
+          </div>
+          <div class="form-group" style="flex: 2;">
+            <label for="input-inv1-topic">Topic / Paper / Spec *</label>
+            <input type="text" id="input-inv1-topic" placeholder="Graph algorithms for metabolic & cellular pathways" required />
+          </div>
+          <div class="form-group" style="flex: 1.2;">
+            <label for="input-inv1-milestone">Milestone State *</label>
+            <input type="text" id="input-inv1-milestone" placeholder="Literature Review" required />
+          </div>
+        </div>
+
+        <div style="font-weight: 700; color: var(--navy); margin-top: 10px; margin-bottom: 6px; font-size: 0.9rem;">Vector 2 (e.g. Edge Systems)</div>
+        <div class="form-row">
+          <div class="form-group" style="flex: 1;">
+            <label for="input-inv2-vector">Vector Name *</label>
+            <input type="text" id="input-inv2-vector" placeholder="Edge Systems" required />
+          </div>
+          <div class="form-group" style="flex: 2;">
+            <label for="input-inv2-topic">Topic / Paper / Spec *</label>
+            <input type="text" id="input-inv2-topic" placeholder="Asynchronous local-to-cloud delta sync protocols" required />
+          </div>
+          <div class="form-group" style="flex: 1.2;">
+            <label for="input-inv2-milestone">Milestone State *</label>
+            <input type="text" id="input-inv2-milestone" placeholder="Benchmarking In-Engine" required />
+          </div>
+        </div>
+
+        <div style="font-weight: 700; color: var(--navy); margin-top: 10px; margin-bottom: 6px; font-size: 0.9rem;">Vector 3 (e.g. Neuro-Informatics)</div>
+        <div class="form-row">
+          <div class="form-group" style="flex: 1;">
+            <label for="input-inv3-vector">Vector Name *</label>
+            <input type="text" id="input-inv3-vector" placeholder="Neuro-Informatics" required />
+          </div>
+          <div class="form-group" style="flex: 2;">
+            <label for="input-inv3-topic">Topic / Paper / Spec *</label>
+            <input type="text" id="input-inv3-topic" placeholder="Acoustic biomarker extraction under low-bandwidth constraints" required />
+          </div>
+          <div class="form-group" style="flex: 1.2;">
+            <label for="input-inv3-milestone">Milestone State *</label>
+            <input type="text" id="input-inv3-milestone" placeholder="Prototype Testing" required />
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancel-investigations-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Investigations Log</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 4: EDIT CONTACT INFO
+       ==================================================================== -->
+  <div class="modal-backdrop" id="contact-modal" aria-hidden="true" role="dialog" aria-labelledby="contact-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">📬</div>
+          <div>
+            <h3 id="contact-modal-title">Edit Contact Information</h3>
+            <p class="modal-subtitle">Update your Gmail, LinkedIn handle, and contact links</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="close-contact-modal-btn" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="contact-form" class="modal-body">
+        <div class="form-group">
+          <label for="input-contact-email">Email Address (Gmail) *</label>
+          <input type="email" id="input-contact-email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="input-contact-linkedin-user">LinkedIn Username / Handle *</label>
+          <input type="text" id="input-contact-linkedin-user" placeholder="sayeeda-huriya-fatima" required />
+        </div>
+
+        <div class="form-group">
+          <label for="input-contact-linkedin-url">LinkedIn Full Profile URL *</label>
+          <input type="url" id="input-contact-linkedin-url" placeholder="https://www.linkedin.com/in/sayeeda-huriya-fatima" required />
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancel-contact-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Contact Info</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 5: ADD / EDIT DEPLOYED PROJECT
+       ==================================================================== -->
+  <div class="modal-backdrop" id="project-modal" aria-hidden="true" role="dialog" aria-labelledby="project-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">🚀</div>
+          <div>
+            <h3 id="project-modal-title">Add Live Deployed Project</h3>
+            <p class="modal-subtitle">Tag and showcase your web applications in the gallery</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="close-project-modal-btn" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="project-form" class="modal-body">
+        <input type="hidden" id="project-id" />
+
+        <div class="form-group">
+          <label for="project-title">Project Name *</label>
+          <input type="text" id="project-title" placeholder="E.g. Node Binding AI" required />
+        </div>
+
+        <div class="form-group">
+          <label for="project-url">Live Deployed URL * (e.g. Vercel, Netlify)</label>
+          <input type="url" id="project-url" placeholder="https://your-app.vercel.app" required />
+        </div>
+
+        <div class="form-group">
+          <label for="project-desc">Description *</label>
+          <textarea id="project-desc" rows="3" placeholder="Briefly describe what this project does and key features..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="project-tags">Tags & Technologies (comma-separated) *</label>
+          <input type="text" id="project-tags" placeholder="React, Vite, AI, Node.js, Vercel" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="project-category">Category</label>
+            <select id="project-category">
+              <option value="AI">AI & Machine Learning</option>
+              <option value="Aerospace">Aerospace / Flight Telemetry</option>
+              <option value="Web Apps">Full-Stack Web App</option>
+              <option value="Developer Tools">Developer Tools</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="project-theme">Card Theme Gradient</label>
+            <select id="project-theme">
+              <option value="moss">Moss Green (Palette Primary)</option>
+              <option value="sage">Sage Green (Soft Accent)</option>
+              <option value="blush">Blush Rose (Warm Accent)</option>
+              <option value="combo">Blush & Sage Blend</option>
+              <option value="forest">Deep Forest Olive</option>
+              <option value="rosewood">Rosewood Blush</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="project-github">GitHub Repository (optional)</label>
+          <input type="url" id="project-github" placeholder="https://github.com/..." />
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancel-project-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-project-btn">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 6: ADD / EDIT FUTURE IDEA
+       ==================================================================== -->
+  <div class="modal-backdrop" id="future-modal" aria-hidden="true" role="dialog" aria-labelledby="future-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge blush">💡</div>
+          <div>
+            <h3 id="future-modal-title">Propose Future Idea</h3>
+            <p class="modal-subtitle">Document upcoming project concepts for your R&D lab</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="close-future-modal-btn" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="future-form" class="modal-body">
+        <input type="hidden" id="future-id" />
+
+        <div class="form-group">
+          <label for="future-title">Idea Title *</label>
+          <input type="text" id="future-title" placeholder="E.g. Autonomous Vision Telemetry" required />
+        </div>
+
+        <div class="form-group">
+          <label for="future-summary">Concept Summary & Problem Solved *</label>
+          <textarea id="future-summary" rows="3" placeholder="Explain the concept, technical architecture, and impact..." required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="future-stage">R&D Stage</label>
+            <select id="future-stage">
+              <option value="Ideation">💡 Ideation & Research</option>
+              <option value="Architecture">📐 Architecture & Blueprint</option>
+              <option value="Prototyping">⚙️ Active Prototyping</option>
+              <option value="Lab Testing">🔬 Lab Testing</option>
+              <option value="Coming Soon">🚀 In Pipeline (2026–2030)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="future-timeline">Target Timeline</label>
+            <input type="text" id="future-timeline" placeholder="E.g. Semester 2 / Q3 2026" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="future-tags">Proposed Tech Stack (comma-separated)</label>
+          <input type="text" id="future-tags" placeholder="Python, PyTorch, Next.js, IoT, OpenCV" required />
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancel-future-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-future-btn">Save Future Idea</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 7: LIVE PREVIEW MODAL
+       ==================================================================== -->
+  <div class="modal-backdrop" id="preview-modal" aria-hidden="true" role="dialog" aria-labelledby="preview-modal-title">
+    <div class="modal-card modal-large">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon-badge">🌐</div>
+          <div>
+            <h3 id="preview-modal-title">Live Website Preview</h3>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="preview-url-link" id="preview-external-link"></a>
+          </div>
+        </div>
+        <div class="preview-header-actions">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" id="preview-new-tab-btn">
+            <span>Open in New Tab</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+          <button class="modal-close-btn" id="close-preview-modal-btn" aria-label="Close preview">✕</button>
+        </div>
+      </div>
+      <div class="preview-iframe-wrapper">
+        <iframe id="preview-iframe" title="Website Preview" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+        <div class="preview-loading-overlay" id="preview-loading">
+          <div class="loading-spinner"></div>
+          <span>Loading live website...</span>
+          <small class="preview-fallback-note">If direct preview is blocked by provider security headers, click 'Open in New Tab'.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
